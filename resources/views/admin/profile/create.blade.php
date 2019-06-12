@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-    
-        <title>作成</title>    
-    </head>
-    <body>
-        <h1>プロフィール</h1>
-    </body>
-</html>
+@extends('layouts.profile')  {{--読み込みメソッド--}}
+@section('title','プロフィール') {{--埋め込み--}}
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <h2>プロフィールの新規作成</h2>
+            </div>
+        </div>
+    </div>
+@endsection
