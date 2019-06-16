@@ -145,6 +145,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'title' => 'タイトル',
+        'body' => '本文',
+        'name' => '名前',
+        'gender' => '性別',
+        'hobby' => '趣味',
+        'introdaction' => '自己紹介',
+        ],
 
 ];

@@ -12,7 +12,7 @@
                         <ul>
                             @foreach($errors->all() as $e)
                               <li>{{ $e }}</li>
-                              @endforeach
+                            @endforeach
                         </ul>
                     @endif
                     <div class="form-group row">

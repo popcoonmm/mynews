@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>ニュースの新規作成</h2>
-                <form action="post" enctype="multipart/form-date">
+                <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-date">
                     
                     @if (count($errors) > 0)
                         <ul>
