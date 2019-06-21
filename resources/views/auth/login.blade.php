@@ -8,15 +8,16 @@
                     <div class="login-header card-header mx-auto">{{ __('messages.Login') }}</div>
 
                     <div class="login-body card-body">
+                    <!--route関数 login とゆうURLを生成 route('login') -->
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-
                             <div class="form-group row">
                                 <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('messages.E-Mail Address') }}</label>
 
                                 <div class="col-md-6">
+                                  <!--三項演算子<条件式> ? <真式> : <偽式>あ-->
                                     <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
+                                     <!--old('email')フラッシュデータを取得 //バリデーションで返された時に代入されるメッセージ-->
                                     @if ($errors->has('email'))
                                         <span class="invalid-feedback">
                                             <strong>{{ $errors->first('email') }}</strong>

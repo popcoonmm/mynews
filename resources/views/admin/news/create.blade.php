@@ -1,14 +1,21 @@
-@extends('layouts.admin')  {{--読み込みメソッド--}}
-@section('title','ニュースの新規作成') {{--埋め込み--}}
-@section('content')
+@extends('layouts.admin')  
+<!----viewファイルの継承 置き換え　layouts/admin.blade.phpを読み込む-->
+
+@section('title','ニュースの新規作成') 
+<!--タイトルに埋め込み-- admin.blade.phpの@yield('title')に埋め込む-->
+
+@section('content') <!--同上contentに埋め込む-->
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>ニュースの新規作成</h2>
-                <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-date">
-                    
+              
+                <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-data">
+                    <!--nullではなく0を返す-->
                     @if (count($errors) > 0)
                         <ul>
+                          <!--エラーの中身の数だけループ　
+                          その中身を＄e代入 liで表示-->
                             @foreach($errors->all() as $e)
                               <li>{{ $e }}</li>
                               @endforeach
@@ -35,7 +42,6 @@
                     </div>
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="更新">
-                    
                 </form>
             </div>
         </div>

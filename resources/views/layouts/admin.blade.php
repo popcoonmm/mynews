@@ -28,6 +28,8 @@
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                       
+                       {{ config('app.name', 'Laravel') }}
+                      
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -40,6 +42,7 @@
                         </ul>
                         
                         <ul class="navbar-nav ml-auto">
+
                         {{--ログインしていない場合ログイン画面のリンクへ--}}
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -62,18 +65,16 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                     @endguest
+
                         </ul>
-                        
                     </div>
                  </div>
             </nav>　　　{{--ここまでナビゲーションバー--}}
-        
+
             <main class="py-4">
                 @yield('content')
             </main>
-        
         </div>  
-        
     </body>
 </html>

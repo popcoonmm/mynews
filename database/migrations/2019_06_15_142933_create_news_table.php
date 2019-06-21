@@ -11,6 +11,7 @@ class CreateNewsTable extends Migration
      *
      * @return void
      */
+     /*関数UP にはマイグレーション実行時のコードを書く*/
     public function up()
     {
         Schema::create('news', function (Blueprint $table) {

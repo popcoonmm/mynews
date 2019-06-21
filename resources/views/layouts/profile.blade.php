@@ -28,7 +28,7 @@
             <nav class="navbar navbar-expant-md navbar-dark navbar-laravel">
                 <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                      
+                      {{ config('app.name', 'Laravel') }}
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" date-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -62,19 +62,16 @@
                                     </form>
                                 </div>
                             </li>
-                        
                          @endguest
-                          
+                  
                         </ul>
                     </div>
                  </div>
             </nav>　　　{{--ここまでナビゲーションバー--}}
-        
+  
             <main class="py-4">
                 @yield('content')
             </main>
-        
         </div>  
-        
     </body>
 </html>
