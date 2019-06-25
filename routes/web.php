@@ -10,10 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-}); //ログインしないとログイン画面にリダイレクトされる仕様になる
+//ログインしないとログイン画面にリダイレクトされる仕様になる
 Route::group(['prefix' => 'admin','admin', 'middleware' => 'auth'],function() {
   Route::get('news/create','Admin\NewsController@add');
   Route::get('news/edit', 'Admin\NewsController@edit');
@@ -39,7 +36,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::get('/', 'NewsController@index');
-Route::get('/', 'NewsController@profile');
+
 
 
