@@ -27,40 +27,34 @@
             </div>
         </div>
         <div class="row">
-            <div class="admin-profile col-md-12 mx-auto">
+            <div class="list-profile col-md-12 mx-auto">
                 <div class="row">
                     <table class="table table-dark">
                         <thead>
                             <tr>
                                 <th width="10%">ID</th>
-                                <th width="20%">氏名</th>
-                                <th width="20%">性別</th>
-                                <th width="20%">趣味</th>
-                                <th width="50%">自己紹介</th>
+                                <th width="10%">氏名</th>
+                                <th width="10%">性別</th>
+                                <th width="10%">趣味</th>
+                                <th width="10%">自己紹介</th>
                                 <th width="10%">操作</th>
-                                
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($posts as $profile)
                                 <tr>
                                     <th>{{ $profile->id }}</th>
-                                    <td>{{ str_limit($profile->title, 100) }}</td>
-                                    <td>{{ str_limit($profile->body, 250) }}</td>
+                                    <td>{{ str_limit($profile->name, 100) }}</td>
+                                    <td>{{ str_limit($profile->gender, 100) }}</td>
+                                    <td>{{ str_limit($profile->hobby, 100) }}</td>
+                                    <td>{{ str_limit($profile->introdaction, 100) }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>
                                         </div>
-                                        <div>
-                                         <!-- <form action="{{ action('Admin\ProfileController@delete') }}" method="post" enctype="multipart/form-date">
-                                            {{ method_field('delete') }}
-                                            <input type="hidden" name="id" value="{{$profile->id}}"/>
-                                            <input type="submit" value="削除">
-                                             {{ csrf_field() }}
-                                            </form>
-                                            -->
+                                          <div>
                                               <a href="{{ action('Admin\ProfileController@delete', ['id' =>$profile->id]) }}">削除</a>
-                                        </div>
+                                          </div>
                                     </td>
                                 </tr>
                             @endforeach

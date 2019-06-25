@@ -49,9 +49,6 @@ class ProfileController extends Controller
       
       
   }
-
- 
-
   
   public function edit(Request $request)
   {
@@ -67,39 +64,30 @@ class ProfileController extends Controller
   
     public function update(Request $request)
   {
-    
       // Validationをかける
       $this->validate($request, Profile::$rules);
       // profile Modelからデータを取得する
       $profile = Profile::find($request->id);
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
-     
       unset($profile_form['_token']);
       unset($profile_form['remove']);
-      // 該当するデータを上書きして保存する
-      $profile->fill($profile_form)->save();
-      
-      // 以下を追記
+        $profile->fill($profile_form)->save();
         $profilehistory = new Profilehistory;
         $profilehistory->profile_id = $profile->id;
         $profilehistory->edited_at = Carbon::now();
         $profilehistory->save();
-
+      
+      
       return redirect('admin/profile/');
   }
   
       public function delete(Request $request)
   {
-    
       // 該当するProfile Modelを取得
       $profile = Profile::find($request->id);
-      // 削除する
-       
       $profile->delete();
-      
       return redirect('admin/profile/');
   }  
 
- 
 }

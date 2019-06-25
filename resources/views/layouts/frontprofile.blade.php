@@ -20,7 +20,7 @@
         {{--Laravel css読み込み--}}
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         
-        <link href="{{ secure_asset('css/admin.css') }}" rel="stylesheet">
+        <link href="{{ secure_asset('css/frontprofile.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">

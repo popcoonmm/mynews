@@ -9,7 +9,6 @@
         <!--//フォームアクション-->
         <form action="{{action('Admin\ProfileController@update')}}" method="post" enctype="multipart/form-data">
           @if (count($errors) > 0)
-          {{$errors}}
               <ul>
                 @foreach($errors->all() as $e)
                     <li>{{ $e }}</li>
@@ -44,13 +43,11 @@
                <input type="text" class="form-control"name="introduction" value="{{ $profile_form->introduction }}">
             </div>
           </div>
-           <div class="form-group row">
-            <div class="col-md-10">
-              <input type="hidden" name="id" value="{{$profile_form->id }}">
               {{ csrf_field() }}
               <input type="submit" class="btn btn-primary" value="更新">
             </div>
           </div>
+          <input type="hidden" name="id" value="{{ $profile_form->id }}">
         </form>
         <!-- 以下を追記　-->
         <div class="row mt-5">
