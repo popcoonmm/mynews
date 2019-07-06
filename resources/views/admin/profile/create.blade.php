@@ -25,7 +25,6 @@
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
-                    
                     <div class="form-group row">
                         <lable class="col-md-2" for="gender">性別</lable>
                         <div class="col-md-10">
@@ -38,7 +37,6 @@
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="hobby" value="{{ old('hobby') }}">
                         </div>
-                    </div>
                     
                     <div class="form-group row">
                         <lable class="col-md-2" for="introduction">自己紹介欄</lable>
